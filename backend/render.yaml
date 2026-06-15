@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: movie-ticket-booking-api
+    env: node
+    region: ohio
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    workingDirectory: backend
+    envVars:
+      - key: NODE_VERSION
+        value: 20
+      - key: PORT
+        value: "3001"
+      - key: REDIS_URL
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: ADMIN_USERNAME
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: FRONTEND_URL
+        value: https://yashvadhadiya.github.io/movie-ticket-booking
